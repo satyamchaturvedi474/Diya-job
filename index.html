@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Hunt Report — CA Diya Jain</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0d14;
+    --surface: #111520;
+    --surface2: #161c2e;
+    --border: #1e2740;
+    --gold: #d4a84b;
+    --gold-light: #f0c870;
+    --teal: #2dd4bf;
+    --red: #f87171;
+    --green: #4ade80;
+    --amber: #fbbf24;
+    --text: #e8eaf2;
+    --muted: #8892a8;
+    --high: #22c55e;
+    --mid: #f59e0b;
+    --stretch: #a78bfa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* HEADER */
+  .hero {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0;
+    width: 200px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    color: var(--gold);
+    background: rgba(212,168,75,0.1);
+    border: 1px solid rgba(212,168,75,0.25);
+    border-radius: 4px;
+    padding: 4px 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .badge::before { content: '◈'; font-size: 9px; }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  h1 span { color: var(--gold); }
+  .subtitle {
+    font-size: 15px; color: var(--muted);
+    font-weight: 400; margin-top: 10px;
+  }
+
+  /* PROFILE SNAPSHOT */
+  .snapshot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .snap-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .snap-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+  .snap-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .snap-value {
+    font-size: 15px; font-weight: 600;
+    color: var(--text); line-height: 1.3;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 40px 0 24px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--gold);
+    background: rgba(212,168,75,0.1);
+    border: 1px solid rgba(212,168,75,0.2);
+    border-radius: 4px;
+    padding: 3px 8px;
+    letter-spacing: 0.06em;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: #fff;
+  }
+
+  /* CATEGORY BLOCKS */
+  .category-block { margin-bottom: 40px; }
+  .category-label {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .cat-pill {
+    font-size: 11px; font-weight: 600;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    padding: 5px 12px; border-radius: 20px;
+    text-transform: uppercase;
+  }
+  .cat-pill.high { background: rgba(34,197,94,0.12); color: var(--high); border: 1px solid rgba(34,197,94,0.25); }
+  .cat-pill.mid { background: rgba(245,158,11,0.12); color: var(--mid); border: 1px solid rgba(245,158,11,0.25); }
+  .cat-pill.stretch { background: rgba(167,139,250,0.12); color: var(--stretch); border: 1px solid rgba(167,139,250,0.25); }
+  .cat-desc { font-size: 13px; color: var(--muted); }
+
+  /* JOB CARDS */
+  .jobs-grid { display: flex; flex-direction: column; gap: 12px; }
+
+  .job-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+    transition: border-color 0.2s, transform 0.2s;
+    animation: fadeUp 0.4s ease both;
+  }
+  .job-card:hover {
+    border-color: rgba(212,168,75,0.35);
+    transform: translateY(-2px);
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .job-left { min-width: 0; }
+
+  .job-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .job-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    min-width: 20px;
+  }
+  .job-title {
+    font-size: 15px; font-weight: 600;
+    color: #fff; line-height: 1.3;
+  }
+  .job-company {
+    font-size: 13px; color: var(--gold);
+    font-weight: 500; margin-bottom: 6px;
+    padding-left: 30px;
+  }
+  .job-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding-left: 30px; margin-bottom: 10px;
+  }
+  .tag {
+    font-size: 10px; font-weight: 500;
+    font-family: 'DM Mono', monospace;
+    padding: 3px 8px; border-radius: 4px;
+    background: var(--surface2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .tag.salary { color: var(--teal); border-color: rgba(45,212,191,0.2); background: rgba(45,212,191,0.06); }
+  .tag.location { color: #93c5fd; border-color: rgba(147,197,253,0.2); background: rgba(147,197,253,0.06); }
+
+  .job-match {
+    font-size: 12px; color: var(--muted);
+    padding-left: 30px; line-height: 1.6;
+  }
+  .job-match strong { color: var(--text); font-weight: 500; }
+
+  /* FIT SCORE */
+  .fit-block { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; min-width: 80px; }
+  .fit-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700;
+    line-height: 1;
+  }
+  .fit-score.high { color: var(--high); }
+  .fit-score.mid { color: var(--mid); }
+  .fit-score.stretch { color: var(--stretch); }
+  .fit-label { font-size: 10px; color: var(--muted); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; text-align: right; }
+
+  .apply-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(212,168,75,0.1);
+    border: 1px solid rgba(212,168,75,0.3);
+    color: var(--gold);
+    font-size: 11px; font-weight: 600;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 7px 14px; border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .apply-btn:hover {
+    background: rgba(212,168,75,0.18);
+    border-color: rgba(212,168,75,0.5);
+  }
+  .apply-btn::after { content: '↗'; font-size: 12px; }
+
+  /* BAR CHART */
+  .bar-track {
+    width: 70px; height: 4px;
+    background: var(--border); border-radius: 2px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%; border-radius: 2px;
+    transition: width 1s ease;
+  }
+  .bar-fill.high { background: var(--high); }
+  .bar-fill.mid { background: var(--mid); }
+  .bar-fill.stretch { background: var(--stretch); }
+
+  /* STRATEGY BOX */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    padding-bottom: 60px;
+  }
+  .strategy-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .strategy-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    color: #fff; margin-bottom: 10px;
+  }
+  .strategy-card ul {
+    list-style: none; padding: 0;
+  }
+  .strategy-card li {
+    font-size: 13px; color: var(--muted);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .strategy-card li:last-child { border-bottom: none; }
+  .strategy-card li::before { content: '→'; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+  .strategy-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* STAGGER ANIMATION */
+  .job-card:nth-child(1) { animation-delay: 0.05s; }
+  .job-card:nth-child(2) { animation-delay: 0.1s; }
+  .job-card:nth-child(3) { animation-delay: 0.15s; }
+  .job-card:nth-child(4) { animation-delay: 0.2s; }
+  .job-card:nth-child(5) { animation-delay: 0.25s; }
+  .job-card:nth-child(6) { animation-delay: 0.3s; }
+  .job-card:nth-child(7) { animation-delay: 0.35s; }
+  .job-card:nth-child(8) { animation-delay: 0.4s; }
+
+  @media (max-width: 600px) {
+    .job-card { grid-template-columns: 1fr; }
+    .fit-block { flex-direction: row; align-items: center; justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">AI Recruiter Report · March 2026</div>
+    <h1>Job Hunt Playbook<br><span>CA Diya Jain</span></h1>
+    <p class="subtitle">23 curated opportunities · Fit-scored · Prioritized · With live application links</p>
+  </div>
+
+  <!-- PROFILE SNAPSHOT -->
+  <div class="snapshot">
+    <div class="snap-card">
+      <div class="snap-label">Qualification</div>
+      <div class="snap-value">CA Final<br><span style="font-size:12px;color:var(--muted)">Nov 2024 · ICAI · 56%</span></div>
+    </div>
+    <div class="snap-card">
+      <div class="snap-label">Experience</div>
+      <div class="snap-value">3 yrs Articleship<br><span style="font-size:12px;color:var(--muted)">Talati & Talati LLP</span></div>
+    </div>
+    <div class="snap-card">
+      <div class="snap-label">Current Role</div>
+      <div class="snap-value">Finance Associate<br><span style="font-size:12px;color:var(--muted)">Bajaj Finserv · IFRS 17</span></div>
+    </div>
+    <div class="snap-card">
+      <div class="snap-label">Top Skills</div>
+      <div class="snap-value">IFRS · IND AS · Statutory/Internal Audit · SAP · Tally</div>
+    </div>
+    <div class="snap-card">
+      <div class="snap-label">Key Strengths</div>
+      <div class="snap-value">Big-client exposure · Awards · Fortune 500 audit</div>
+    </div>
+    <div class="snap-card">
+      <div class="snap-label">Target CTC</div>
+      <div class="snap-value">₹8 – 14 LPA<br><span style="font-size:12px;color:var(--muted)">Based on market benchmarks</span></div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       TIER 1 — HIGH PROBABILITY
+       ============================== -->
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Prioritized Job Application List</span>
+  </div>
+
+  <!-- HIGH PROB -->
+  <div class="category-block">
+    <div class="category-label">
+      <span class="cat-pill high">🟢 High Probability</span>
+      <span class="cat-desc">Strong profile match · Apply immediately · 70–92 fit score</span>
+    </div>
+    <div class="jobs-grid">
+
+      <!-- 1 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">01</span><span class="job-title">Audit Associate (CA Fresher) — Assurance</span></div>
+          <div class="job-company">EY India · Mumbai / Ahmedabad / Bangalore</div>
+          <div class="job-tags">
+            <span class="tag salary">₹9–12 LPA</span>
+            <span class="tag location">Pan-India</span>
+            <span class="tag">Big 4</span>
+            <span class="tag">Statutory Audit</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Direct match with 3-yr articleship in statutory audit across BFSI, manufacturing, & FMCG. EY actively recruits newly qualified CAs. IFRS 17 exposure is a rare differentiator.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">92</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:92%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://careers.ey.com/ey/job/India" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">02</span><span class="job-title">Audit Executive / Associate — Statutory Audit</span></div>
+          <div class="job-company">Deloitte India · Mumbai / Hyderabad / Pune</div>
+          <div class="job-tags">
+            <span class="tag salary">₹9–13 LPA</span>
+            <span class="tag location">Pan-India</span>
+            <span class="tag">Big 4</span>
+            <span class="tag">IFRS</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Deloitte's Audit & Assurance practice is the largest recruiter of qualified CAs. Articleship at a top firm like Talati & Talati LLP is well-regarded by Deloitte HR.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">90</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:90%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://southasiacareers.deloitte.com" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">03</span><span class="job-title">CA Fresher — Audit Associate</span></div>
+          <div class="job-company">KPMG India · Mumbai / Pune / Ahmedabad</div>
+          <div class="job-tags">
+            <span class="tag salary">₹8.5–12 LPA</span>
+            <span class="tag location">Pan-India</span>
+            <span class="tag">Big 4</span>
+            <span class="tag">Risk Advisory</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> KPMG has a live fresher CA audit role posted (see KPMG India careers). IFRS knowledge and PSB audit exposure (61 trillion asset base client) will stand out in interviews.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">89</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:89%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://kpmg.com/in/en/home/careers.html" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">04</span><span class="job-title">Assurance Associate / Senior Associate</span></div>
+          <div class="job-company">PwC India · Mumbai / Delhi / Kolkata</div>
+          <div class="job-tags">
+            <span class="tag salary">₹9–12 LPA</span>
+            <span class="tag location">Pan-India</span>
+            <span class="tag">Big 4</span>
+            <span class="tag">IND AS</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> PwC is known for strong IND AS & IFRS practices. Financial statement preparation experience across IND AS/AS/Schedule III is exactly what PwC Assurance looks for.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">89</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:89%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://pwc.in/careers.html" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">05</span><span class="job-title">CA Fresher — Qualified Associate, Internal Audit</span></div>
+          <div class="job-company">N. A. Shah Associates LLP · Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7–9 LPA</span>
+            <span class="tag location">Mumbai</span>
+            <span class="tag">Mid-Tier Firm</span>
+            <span class="tag">Internal Audit</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Live Glassdoor posting (rated 4.3★). Profile requires Internal Audit articleship exposure — Diya's risk-based internal audit at 1392cr+ listed companies is a perfect credential.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">88</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:88%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.glassdoor.co.in/Jobs/N-A-Shah-Associates-LLP-Jobs-E1170887.htm" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">06</span><span class="job-title">Audit & Assurance — CA Fresher (Global Audit)</span></div>
+          <div class="job-company">Grant Thornton Bharat LLP · Mumbai / Delhi</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7.5–10 LPA</span>
+            <span class="tag location">Mumbai · Delhi</span>
+            <span class="tag">Mid-Tier Big</span>
+            <span class="tag">Global Clients</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> GT India actively recruits newly qualified CAs for global statutory audit engagements. Internshala/LinkedIn lists active openings. Multi-sector articleship experience is valued.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">87</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:87%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.grantthornton.in/careers/" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">07</span><span class="job-title">Finance Associate — IFRS / Financial Reporting</span></div>
+          <div class="job-company">HDFC Life Insurance · Mumbai / Pune</div>
+          <div class="job-tags">
+            <span class="tag salary">₹8–11 LPA</span>
+            <span class="tag location">Mumbai · Pune</span>
+            <span class="tag">Insurance BFSI</span>
+            <span class="tag">IFRS 17</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Diya's hands-on IFRS 17 implementation at Bajaj Finserv (insurance) is exceptionally rare for a fresher. HDFC Life is undergoing the same IFRS 17 transition — she could walk in with firsthand expertise.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">91</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:91%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.hdfclife.com/about-us/careers" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">08</span><span class="job-title">Finance Executive — Financial Reporting & Compliance</span></div>
+          <div class="job-company">SBI Life Insurance · Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7–10 LPA</span>
+            <span class="tag location">Mumbai</span>
+            <span class="tag">PSU Insurance</span>
+            <span class="tag">IFRS 17</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> SBI Life is in active IFRS 17 transition mode. Diya's gap analysis, UAT, and journal entry validation experience maps precisely to what IFRS 17 transition teams need. BaNCS skill is a bonus.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">86</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:86%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.sbilife.co.in/en/careers" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">09</span><span class="job-title">Finance Analyst — Fund Accounting / Financial Reporting</span></div>
+          <div class="job-company">Morgan Stanley (MSFS) · Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹8–12 LPA</span>
+            <span class="tag location">Mumbai</span>
+            <span class="tag">MNC GCC</span>
+            <span class="tag">IFRS</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Glassdoor lists an active MSFS role seeking CA freshers (0–2 yr PQE). IFRS knowledge is listed as a distinct advantage. Public accounting experience from articleship directly qualifies.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">84</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:84%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.morganstanley.com/people-opportunities/students-graduates/programs/india" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">10</span><span class="job-title">Statutory Auditor — CA Fresher</span></div>
+          <div class="job-company">RSM India / BDO India · Mumbai / Ahmedabad</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7–9.5 LPA</span>
+            <span class="tag location">Mumbai · Ahmedabad</span>
+            <span class="tag">Mid-Tier</span>
+            <span class="tag">Statutory Audit</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> RSM and BDO actively recruit qualified CAs from mid-tier firms. Strong Fortune 500 + listed company audit exposure from Talati & Talati is exactly the background they want.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score high">83</div>
+          <div class="bar-track"><div class="bar-fill high" style="width:83%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://rsmindia.in/careers/" target="_blank">Apply RSM</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MEDIUM PROB -->
+  <div class="category-block">
+    <div class="category-label">
+      <span class="cat-pill mid">🟡 Medium Probability</span>
+      <span class="cat-desc">Good match with some upskilling / preparation needed · 65–79 fit score</span>
+    </div>
+    <div class="jobs-grid">
+
+      <!-- 11 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">11</span><span class="job-title">Finance Analyst — Financial Control & Reporting</span></div>
+          <div class="job-company">JP Morgan Chase (GCC India) · Mumbai / Hyderabad</div>
+          <div class="job-tags">
+            <span class="tag salary">₹9–14 LPA</span>
+            <span class="tag location">Mumbai · Hyderabad</span>
+            <span class="tag">MNC GCC</span>
+            <span class="tag">USGAAP/IFRS</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> JPM GCC hires CA freshers for financial control. IFRS background is a plus. Upskill tip: Brush up on US GAAP basics and financial modelling for the technical round.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">78</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:78%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://careers.jpmorgan.com/global/en/jobs/search" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">12</span><span class="job-title">Finance & Accounts Associate</span></div>
+          <div class="job-company">Citi India (GCC) · Mumbai / Pune</div>
+          <div class="job-tags">
+            <span class="tag salary">₹8–12 LPA</span>
+            <span class="tag location">Mumbai · Pune</span>
+            <span class="tag">MNC GCC</span>
+            <span class="tag">Banking BFSI</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Citi's India GCC recruits CA freshers for finance operations. PSB audit exposure at a 61-trillion asset bank is a strong talking point. BaNCS banking software skill is a differentiator.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">76</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:76%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://jobs.citi.com/" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">13</span><span class="job-title">Internal Auditor — Risk & Compliance</span></div>
+          <div class="job-company">HSBC India (GCC) · Hyderabad / Pune</div>
+          <div class="job-tags">
+            <span class="tag salary">₹8–11 LPA</span>
+            <span class="tag location">Hyderabad · Pune</span>
+            <span class="tag">MNC</span>
+            <span class="tag">Internal Audit</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> HSBC GCC India regularly posts internal audit roles for CA freshers. Risk-based internal audit experience with listed manufacturing companies is directly relevant.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">75</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:75%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.hsbc.com/careers" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">14</span><span class="job-title">Finance Analyst / Controller Trainee</span></div>
+          <div class="job-company">Goldman Sachs India · Bengaluru / Hyderabad</div>
+          <div class="job-tags">
+            <span class="tag salary">₹10–15 LPA</span>
+            <span class="tag location">Bangalore · Hyderabad</span>
+            <span class="tag">Bulge Bracket</span>
+            <span class="tag">High Competitive</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Goldman Sachs Bangalore GCC recruits CA freshers for Finance Controller roles. Preparation needed: financial modelling basics and GS-specific technical rounds. The IFRS + Statutory audit mix is competitive.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">73</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:73%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.goldmansachs.com/careers/" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">15</span><span class="job-title">Finance Executive — Accounts & Reporting</span></div>
+          <div class="job-company">Tata Group Companies (TCS/Tata Capital/Tata AIA) · Pan-India</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7–10 LPA</span>
+            <span class="tag location">Pan-India</span>
+            <span class="tag">Conglomerate</span>
+            <span class="tag">Stable</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Tata Capital and Tata AIA Life specifically need IFRS/IND AS finance professionals. SAP experience gives Diya a direct edge. Multiple openings live on Naukri.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">74</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:74%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.naukri.com/ca-ifrs-jobs" target="_blank">Search</a>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">16</span><span class="job-title">Tax Audit & Compliance Associate</span></div>
+          <div class="job-company">Mahindra & Mahindra / Adani Group · Ahmedabad / Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7–10 LPA</span>
+            <span class="tag location">Ahmedabad · Mumbai</span>
+            <span class="tag">Indian MNC</span>
+            <span class="tag">Tax Audit</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Tax audit of corporate clients across manufacturing (1249cr+ turnover) makes this an easy sell. Direct/indirect tax experience from articleship is relevant. Search actively on Naukri for these postings.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">72</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:72%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://careers.mahindra.com/" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 17 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">17</span><span class="job-title">Risk Advisory / Business Risk Services Associate</span></div>
+          <div class="job-company">BDO India / Forvis Mazars India · Mumbai / Delhi</div>
+          <div class="job-tags">
+            <span class="tag salary">₹7–10 LPA</span>
+            <span class="tag location">Mumbai · Delhi</span>
+            <span class="tag">Advisory</span>
+            <span class="tag">Risk</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Risk-based internal audit across listed companies (dyes, pigment, bearing cages) translates well to risk advisory. BDO India has active CA fresher roles on Naukri and LinkedIn.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">71</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:71%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.bdoindia.com/careers" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 18 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">18</span><span class="job-title">Assistant Manager — Finance & Accounts</span></div>
+          <div class="job-company">Zepto / Groww / PhonePe (Fintech Startups) · Bangalore / Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹8–14 LPA</span>
+            <span class="tag location">Bangalore · Mumbai</span>
+            <span class="tag">Startup</span>
+            <span class="tag">High Growth</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> High-growth fintechs actively hire CA freshers for finance ops. Fast-paced, high ownership roles. Brush up on startup-specific finance (unit economics, MIS, fundraise compliance) for interviews.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score mid">70</div>
+          <div class="bar-track"><div class="bar-fill mid" style="width:70%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://in.linkedin.com/jobs/chartered-accountant-fresher-jobs" target="_blank">Search</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STRETCH ROLES -->
+  <div class="category-block">
+    <div class="category-label">
+      <span class="cat-pill stretch">🟣 Stretch Roles</span>
+      <span class="cat-desc">Aspirational · Requires focused preparation · But achievable in 3–6 months</span>
+    </div>
+    <div class="jobs-grid">
+
+      <!-- 19 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">19</span><span class="job-title">RBI Grade B Officer — Finance Track</span></div>
+          <div class="job-company">Reserve Bank of India · Pan-India</div>
+          <div class="job-tags">
+            <span class="tag salary">₹12–14 LPA (CTC incl. perks)</span>
+            <span class="tag location">Pan-India</span>
+            <span class="tag">Govt / PSU</span>
+            <span class="tag">Prestigious</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> CA qualification gives exemption from Phase 1. Diya's PSB & financial services statutory audit background is very relevant. Requires 3–6 months dedicated exam preparation. ICAI also runs prep courses.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score stretch">67</div>
+          <div class="bar-track"><div class="bar-fill stretch" style="width:67%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.rbi.org.in/scripts/CareerOpportunities.aspx" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 20 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">20</span><span class="job-title">Investment Banking Analyst (Financial Advisory)</span></div>
+          <div class="job-company">Motilal Oswal / Axis Capital / JM Financial · Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹9–16 LPA</span>
+            <span class="tag location">Mumbai</span>
+            <span class="tag">IB / Advisory</span>
+            <span class="tag">Finance</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> Requires financial modelling skills (DCF, LBO basics). Diya's strong fundamentals and IFRS knowledge are a good base. Upskill tip: Complete a financial modelling course on CFI or Wall Street Prep before applying.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score stretch">62</div>
+          <div class="bar-track"><div class="bar-fill stretch" style="width:62%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.motilaloswal.com/careers" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 21 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">21</span><span class="job-title">FP&A Analyst — Financial Planning & Analysis</span></div>
+          <div class="job-company">Amazon / Flipkart / Swiggy India GCC · Bangalore</div>
+          <div class="job-tags">
+            <span class="tag salary">₹10–16 LPA</span>
+            <span class="tag location">Bangalore</span>
+            <span class="tag">Tech GCC</span>
+            <span class="tag">FP&A</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> FP&A roles at tech companies want CAs with analytical skills. Upskill needed: Advanced Excel, Power BI / Tableau basics, variance analysis. CA fundamentals are the foundation; tech tools close the gap.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score stretch">65</div>
+          <div class="bar-track"><div class="bar-fill stretch" style="width:65%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.amazon.jobs/en/search?base_query=finance+analyst+CA&loc_query=India" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 22 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">22</span><span class="job-title">Consultant — Finance Transformation / IFRS Advisory</span></div>
+          <div class="job-company">McKinsey / BCG / Bain (Finance Practice) · Mumbai / Delhi</div>
+          <div class="job-tags">
+            <span class="tag salary">₹12–18 LPA</span>
+            <span class="tag location">Mumbai · Delhi</span>
+            <span class="tag">MBB</span>
+            <span class="tag">Stretch</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> IFRS 17 implementation + audit exposure makes Diya credible for Finance Transformation practices. However, MBB hiring at this level typically prefers IIM/top MBA. A 2-yr plan: get EY/Big4 experience → MBA → MBB.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score stretch">55</div>
+          <div class="bar-track"><div class="bar-fill stretch" style="width:55%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.mckinsey.com/careers/search-jobs" target="_blank">Apply</a>
+        </div>
+      </div>
+
+      <!-- 23 -->
+      <div class="job-card">
+        <div class="job-left">
+          <div class="job-header"><span class="job-num">23</span><span class="job-title">SEBI Grade A Officer (Legal / Finance Stream)</span></div>
+          <div class="job-company">Securities & Exchange Board of India · Mumbai</div>
+          <div class="job-tags">
+            <span class="tag salary">₹14–17 LPA (CTC)</span>
+            <span class="tag location">Mumbai</span>
+            <span class="tag">Regulator</span>
+            <span class="tag">Prestigious</span>
+          </div>
+          <div class="job-match"><strong>Why it fits:</strong> CA qualification directly eligible. Requires dedicated exam prep. Statutory audit of listed companies + financial markets knowledge makes this a strong long-term target. Check SEBI website for notification dates.</div>
+        </div>
+        <div class="fit-block">
+          <div class="fit-score stretch">60</div>
+          <div class="bar-track"><div class="bar-fill stretch" style="width:60%"></div></div>
+          <div class="fit-label">FIT SCORE</div>
+          <a class="apply-btn" href="https://www.sebi.gov.in/careers.html" target="_blank">Apply</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- APPLICATION STRATEGY -->
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Application Strategy & Quick Wins</span>
+  </div>
+
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <h4>🎯 Your Unique Edge</h4>
+      <ul>
+        <li>IFRS 17 hands-on implementation — rare at fresher level</li>
+        <li>Fortune 500 + 61-trillion-asset-base PSB audit experience</li>
+        <li>Multi-sector articleship: BFSI, manufacturing, FMCG, steel</li>
+        <li>SAP + BaNCS — tech skills that command premium in BFSI</li>
+        <li>3 Government awards (Indrapriyadarshini, Gargi, Star Performer)</li>
+        <li>Training leadership — strong for management-track roles</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <h4>📋 Where to Apply</h4>
+      <ul>
+        <li>LinkedIn — set alerts for "CA Fresher", "CA Qualified", "IFRS"</li>
+        <li>Naukri.com — most active for CA roles in India</li>
+        <li>ICAI CAJOBS portal — cajobs.icai.org</li>
+        <li>CAclubindia jobs — caclubindia.com/jobs</li>
+        <li>Company career pages (Big 4 + listed above)</li>
+        <li>ACCA Careers portal for IFRS-specific roles</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <h4>🔧 Quick Upskill Actions</h4>
+      <ul>
+        <li>Add Power BI / Tableau basics (YouTube / Coursera — free)</li>
+        <li>Complete Excel Advanced (pivot tables, XLOOKUP, power query)</li>
+        <li>Read IFRS 17 implementation playbooks (KPMG / EY PDFs)</li>
+        <li>Prepare 3 case studies from articleship for interviews</li>
+        <li>Update LinkedIn: IFRS 17, SAP, BaNCS as featured skills</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <h4>📅 90-Day Action Plan</h4>
+      <p>
+        <strong style="color:var(--gold)">Week 1–2:</strong> Apply to all High Probability roles (Big 4 + HDFC Life + Morgan Stanley).<br><br>
+        <strong style="color:var(--gold)">Week 3–4:</strong> Apply Medium Probability batch + set up Naukri/LinkedIn alerts.<br><br>
+        <strong style="color:var(--gold)">Month 2:</strong> Begin RBI/SEBI prep if interested in government track.<br><br>
+        <strong style="color:var(--gold)">Month 3:</strong> Upskill Power BI/modelling, revisit Stretch roles.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    Generated by AI Recruiter · CA Diya Jain · March 2026 · 23 Opportunities Curated
+  </div>
+</footer>
+
+</body>
+</html>
